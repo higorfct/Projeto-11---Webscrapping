@@ -1,69 +1,55 @@
-# Projeto 11 - Webscrapping
+# Web Scrapping Project
 
+🌍 **Project Focus:**
 
-🌍 **Foco do projeto:**
+The script performs web scraping directly from Wikipedia, on the page "List of countries by total wealth." It searches for a specific HTML table (with style text-align: right) and extracts the data.
 
-O script faz web scraping diretamente da Wikipédia, na página
-“Lista de países por riqueza total”. Ele busca uma tabela HTML
-específica (com style text-align: right) e extrai os dados.
+🔧 **Data Collection Process:**
 
-🔧 **Funcionamento da coleta:**
+Uses BeautifulSoup to parse the HTML content.  
+Looks inside the table’s <tbody> for <tr> rows.  
+For each row, it collects the <td> cells, cleans characters such as the special space '\xa0', and organizes the values.
 
-Usa BeautifulSoup para parsear o conteúdo HTML.
-Procura dentro do <tbody> da tabela as linhas <tr>.
-Em cada linha, coleta as células <td>, limpa caracteres
-como o espaço especial '\xa0' e organiza os valores.
+🚨 **Exception Handling:**
 
-🚨 **Tratamento de exceções:**
+The code checks whether the table was found. If not, it raises an Exception (“Table not found” or “Table body not found”).  
+This ensures robustness in case the page layout changes.
 
-O código verifica se a tabela foi encontrada. Caso contrário,
-lança uma Exception (“Table não encontrada” ou “Corpo da tabela não encontrado”).
-Isso garante robustez caso o layout da página mude.
+📋 **Data Organization:**
 
-📋 **Organização dos dados:**
+For each table row, the script creates a temporary list, accumulates the values, and then builds a general list of countries and their respective economic metrics.
 
-Para cada linha da tabela, o script cria uma lista temporária,
-acumula os valores e depois constrói uma lista geral de países
-e suas respectivas métricas econômicas.
+📊 **Use of pandas:**
 
-📊 **Utilização do pandas:**
+The extracted data is transformed into a DataFrame, allowing for tabular manipulation, exporting, and later analysis in a simple and efficient way.
 
-Os dados extraídos são transformados em um DataFrame,
-permitindo manipulação tabular, exportação e análises
-posteriores de forma simples e eficiente.
+📈 **Visualization and Insights:**
 
-📈 **Visualização e Insights:**
+The script uses matplotlib to generate charts from the obtained data.  
+A chart was created that clearly shows:
+- Saudi Arabia, Greece, and Poland are the top 3 in the ranking, presenting very similar levels of total wealth.
+- Right behind are Israel, Portugal, and Chile, still with high values but already showing a slight decline compared to the first group.
+- Countries such as Ireland, South Africa, and Finland appear in the intermediate group, maintaining a certain economic relevance.
+- Further down, there is a sharp decline with Peru, Pakistan, Argentina, and Romania, highlighting significant disparities in wealth distribution.
+- The chart clearly reveals this gradual transition and highlights the geographic diversity among the 20 listed countries.
 
-O script utiliza matplotlib para gerar gráficos a partir dos dados obtidos.
-Foi criado um gráfico que permite observar de forma clara:
-- Arábia Saudita, Grécia e Polônia são os 3 maiores do ranking, apresentando níveis de riqueza total bastante semelhantes.
+   <img width="1525" height="650" alt="Screenshot 2025-07-15 094801" src="https://github.com/user-attachments/assets/d6dcc2fc-95ef-447f-bc44-0e38713a5d3b" />
 
-- Logo atrás vêm Israel, Portugal e Chile, ainda com valores elevados, mas já mostrando leve declínio em relação aos primeiros.
+💡 **Key Learnings from this Project:**
 
-- Países como Irlanda, África do Sul e Finlândia aparecem no grupo intermediário, mantendo uma certa relevância econômica.
+- Targeted extraction (by style or structure) increases precision.
+- Text pre-processing is indispensable for cleaning HTML data.
+- Handling exceptions during data collection prevents silent failures.
+- Using pandas to organize data facilitates analysis and chart generation.
+- Chart generation enhances interpretation, highlighting patterns and extremes immediately.
+- Even public web data requires constant verification, as page changes can break the pipeline.
 
-- Mais ao final, observa-se queda acentuada com Peru, Paquistão, Argentina e Romênia, evidenciando disparidades significativas na distribuição de riqueza.
+🚀 **Conclusion:**
 
-- O gráfico revela claramente essa transição gradual e destaca a diversidade geográfica entre os 20 países listados.
+This project exemplifies a robust pipeline:
+1) Reading the website.
+2) Locating and parsing the table.
+3) Cleaning and structuring the data.
+4) Exporting and enabling graphical visualization.
 
-   <img width="1525" height="650" alt="Captura de tela 2025-07-15 094801" src="https://github.com/user-attachments/assets/d6dcc2fc-95ef-447f-bc44-0e38713a5d3b" />
-
-
-💡 **Principais aprendizados deste projeto:**
-
-- A extração direcionada (por estilo ou estrutura) aumenta a precisão.
-- O pré-processamento de texto é indispensável para limpar dados HTML.
-- Tratar exceções durante a coleta evita falhas silenciosas.
-- Usar pandas para organizar dados facilita análises e gráficos.
-- A geração de gráficos potencializa a interpretação, evidenciando padrões e extremos de forma imediata.
-- Mesmo dados públicos da web exigem verificação constante, pois mudanças na página podem quebrar a pipeline.
-
-🚀 **Conclusão:**
-
-Este projeto exemplifica uma pipeline robusta:
-1) Leitura do site.
-2) Localização e parsing da tabela.
-3) Limpeza e estruturação dos dados.
-4) Exportação e possibilidade de visualização gráfica.
-Resultado: uma base confiável sobre países e sua riqueza total, pronta para análises e visualizações futuras.
-
+Result: a reliable database on countries and their total wealth, ready for future analyses and visualizations.
