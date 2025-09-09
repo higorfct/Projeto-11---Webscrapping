@@ -27,13 +27,14 @@ The extracted data is transformed into a DataFrame, allowing for tabular manipul
 
 The script uses matplotlib to generate charts from the obtained data.  
 A chart was created that clearly shows:
-- Saudi Arabia, Greece, and Poland are the top 3 in the ranking, presenting very similar levels of total wealth.
+- Saudi Arabia (Arábia Saudita), Greece, and Poland are the top 3 in the ranking, presenting very similar levels of total wealth.
 - Right behind are Israel, Portugal, and Chile, still with high values but already showing a slight decline compared to the first group.
-- Countries such as Ireland, South Africa, and Finland appear in the intermediate group, maintaining a certain economic relevance.
-- Further down, there is a sharp decline with Peru, Pakistan, Argentina, and Romania, highlighting significant disparities in wealth distribution.
+- Countries such as Ireland, South Africa (África do Sul), and Finland appear in the intermediate group, maintaining a certain economic relevance.
+- Further down, there is a sharp decline with Peru, Pakistan (Paquistão), Argentina, and Romania, highlighting significant disparities in wealth distribution.
 - The chart clearly reveals this gradual transition and highlights the geographic diversity among the 20 listed countries.
 
-   <img width="1525" height="650" alt="Screenshot 2025-07-15 094801" src="https://github.com/user-attachments/assets/d6dcc2fc-95ef-447f-bc44-0e38713a5d3b" />
+  <img width="1190" height="590" alt="image" src="https://github.com/user-attachments/assets/2ff49c73-39aa-48f0-83ec-30c0126edcbb" />
+
 
 💡 **Key Learnings from this Project:**
 
